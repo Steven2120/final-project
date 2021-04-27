@@ -1,7 +1,7 @@
 body {
   background-image: linear-gradient(
       90deg,
-      rgba(117, 131, 152, 0.05),
+      rgba(117, 131, 152, 0.1),
       rgba(124, 31, 31, 0.7)
     ),
     url(/tim-marshall-cAtzHUz7Z8g-unsplash.jpg);
@@ -14,7 +14,7 @@ body {
 
 #app-container {
   min-height: 100vh;
-  width: 90%;
+  width: 80%;
   height: auto;
   border: 1px solid white;
   background-color: ;
@@ -23,11 +23,13 @@ body {
 #title {
   font-size: 4em;
   text-align: center;
+  margin-bottom: 7rem;
 }
 
 #sections-parent {
-  background-color: rgb(140, 65, 65, 0.45);
-  border: 1px solid black;
+  background-color: rgb(140, 65, 65, 0.3);
+  height: 90%;
+  border-radius: 0.5rem;
 }
 
 #top-section {
@@ -37,13 +39,13 @@ body {
 }
 
 #api-key-input {
-  width: 50%;
+  width: 20rem;
   border-radius: 1rem;
   outline: none;
 }
 
 #ein-input {
-  width: 50%;
+  width: 20rem;
   border-radius: 1rem;
   outline: none;
 }
@@ -56,6 +58,10 @@ body {
 #api {
   display: flex;
   justify-content: flex-start;
+}
+
+#ein {
+  margin: auto;
 }
 
 .title-inputs {

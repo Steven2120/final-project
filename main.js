@@ -3,7 +3,7 @@ const body = $("body");
 body.append(`
     <div id="app-container">
         <div class="row">
-            <h1 id="title">Get information on the of your choice</h1>
+            <h1 id="title">Get information on the charity of your choice</h1>
         </div>
         <div id="sections-parent">
             <div id="top-section" class="sections">
