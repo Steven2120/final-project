@@ -11,11 +11,11 @@ body.append(`
                     <h2 id="enter-info">Input requested information to receive details of charity</h2>
                 </div>
                 <div class="row" id="api">
-                    <label class="title-inputs">Enter your API Key</label>
+                    <label id="api-label" class="title-inputs">Enter your API Key</label>
                     <input type="text" id="api-key-input">
                 </div>
                 <div class="row" id="ein">
-                    <label class="title-inputs">Enter charity EIN</label>
+                    <label id="ein-label" class="title-inputs">Enter charity EIN</label>
                     <input type="text" id="ein-input">
                 </div>
                 <div class="row">
@@ -28,11 +28,11 @@ body.append(`
             </div>
 
             <div id="donation" class="sections">
-                <div class="row">
-                    <h3>Would you like to donate?</h3>
+                <div id="donation-title-div" class="row">
+                    <h3 id="donation-title">Would you like to donate?</h3>
                 </div>
-                <div class="row">
-                    <label class="title-inputs">Enter donation amount</label>
+                <div id="donation-user" class="row">
+                    <label id="donation-label" class="title-inputs">Enter donation amount</label>
                     <input type="text" id="donation-input">
                 </div>
             </div>
