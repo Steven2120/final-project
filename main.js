@@ -25,7 +25,9 @@ body.append(`
             </div>
 
             <div id="results" class="sections">
-                <h2 id="result-title">Results</h2>
+                <div class="row">
+                    <h2 id="result-title">Charity Results</h2>
+                </div>
             </div>
 
             <div id="donation" class="sections">
@@ -45,6 +47,7 @@ body.append(`
 const apiInput = $("#api-key-input");
 const einInput = $("#ein-input");
 const searchButton = $("#search-button");
+const resultOutput = $("#results");
 
 //add click event listener to search button and fetch api raw data
 searchButton.click(() => {
@@ -62,6 +65,24 @@ searchButton.click(() => {
     })
     .then((json) => {
       console.log("Json", json);
-      console.log(json.data.city);
+      resultOutput.append(`
+        <div id="result-parent">
+            <div id="result-1" class="result-row">Name: ${json.data.name}</div>
+            <div id="result-2" class="result-row">Established: ${json.data.rullingDate}</div>
+            <div id="result-3" class="result-row">Street: ${json.data.street}</div>
+            <div id="result-4" class="result-row">City: ${json.data.city}</div>
+            <div id="result-5" class="result-row">State: ${json.data.state}</div>
+            <div id="result-6" class="result-row">Zip code: ${json.data.zipCode}</div>
+            <div id="result-7" class="result-row">Country: ${json.data.country}</div>
+            <div id="result-8" class="result-row">Classification: ${json.data.nteeType}</div>
+            <div id="result-9" class="result-row">Brief description: ${json.data.nteeClass}</div>
+            <div id="result-10" class="result-row">Type: ${json.data.organization}</div>
+            <div id="result-11" class="result-row">Status: ${json.data.affiliation}</div>
+            <div id="result-12" class="result-row">Total assets: ${json.data.assetAmount}</div>
+            <div id="result-13" class="result-row">Asset code range: ${json.data.assetCodeDesc}</div>
+            <div id="result-14" class="result-row">Exemption status: ${json.data.exemptStatus}</div>
+            <div id="result-15" class="result-row">Contribution: ${json.data.foundation}</div>
+        </div>
+        `);
     });
 });

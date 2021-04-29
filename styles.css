@@ -81,12 +81,14 @@ body {
 
 #results {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 8rem 0 10rem 0;
 }
 
 #result-title {
   font-size: 3rem;
+  text-align: center;
 }
 
 #donation {
