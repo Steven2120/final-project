@@ -48,17 +48,20 @@ const searchButton = $("#search-button");
 
 //add click event listener to search button and fetch api raw data
 searchButton.click(() => {
-  const URL = `http://data.orghunter.com/v1/charitybasic?user_key=${apiInput.val()}&ein=${einInput.val()}`;
-  console.log(URL);
-  fetch(URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json; charset=UTF-8" },
-  })
+  const URL =
+    "http://data.orghunter.com/v1/charitybasic" +
+    `?user_key=${apiInput.val()}` +
+    `&ein=${einInput.val()}`;
+
+  const CORS_WORKAROUND = "https://cors-anywhere.herokuapp.com/" + URL;
+
+  fetch(CORS_WORKAROUND)
     .then((rawResponse) => {
       console.log("Response", rawResponse);
       return rawResponse.json();
     })
     .then((json) => {
       console.log("Json", json);
+      console.log(json.data.city);
     });
 });
