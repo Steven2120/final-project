@@ -37,6 +37,7 @@ body.append(`
                 <div id="donation-user" class="row">
                     <label id="donation-label" class="title-inputs">Enter donation amount</label>
                     <input type="text" id="donation-input">
+                    <button id="donation-button" class="btn btn-secondary">Donate</button>
                 </div>
             </div>
         </div>
@@ -85,4 +86,32 @@ searchButton.click(() => {
         </div>
         `);
     });
+});
+
+const donationArea = $("#donation-user");
+const donationButton = $("#donation-button");
+const donationInput = $("#donation-input");
+const donationSent = $("<div id='donation-confirmation'></div>");
+donationArea.append(donationSent);
+
+donationButton.click(() => {
+  for (const num of donationInput.val()) {
+    if (/[0-9]/.test(num)) {
+      donationSent.text(`Your ${donationInput.val()} donation is confirmed!`);
+      donationSent.css({
+        color: "green",
+        "font-size": "2em",
+        "text-align": "center",
+        "margin-bottom": "2rem",
+      });
+    } else {
+      donationSent.text("Please enter a correct amount!");
+      donationSent.css({
+        color: "red",
+        "font-size": "2em",
+        "text-align": "center",
+        "margin-bottom": "2rem",
+      });
+    }
+  }
 });
