@@ -98,7 +98,9 @@ donationButton.click(() => {
   for (const num of donationInput.val()) {
     if (/[0-9]/.test(num)) {
       donationSent.text(
-        `Your ${donationInput.val()} dollar donation is confirmed!`
+        `Your $${Number(donationInput.val()).toFixed(
+          2
+        )} dollar donation is confirmed!`
       );
       donationSent.css({
         color: "green",
